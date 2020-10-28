@@ -1,0 +1,32 @@
+{
+  "name": "nana_store_automation_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:services": "concurrently \"appium\" \"emulator -avd Pixel_2_API_29\"",
+    "start:local": "wdio wdio.local.conf.js",
+    "start:prod": "wdio wdio.prod.conf.js",
+    "zip": "powershell Compress-Archive ./*.tgz bundle.zip",
+    "package": "npm pack"
+  },
+  "dependencies": {
+    "@wdio/cli": "^6.6.7",
+    "@wdio/local-runner": "^6.6.7",
+    "@wdio/mocha-framework": "^6.6.7",
+    "@wdio/selenium-standalone-service": "^6.6.5",
+    "@wdio/spec-reporter": "^6.6.8",
+    "@wdio/sync": "^6.6.7"
+  },
+  "bundledDependencies": [
+    "@wdio/cli",
+    "@wdio/local-runner",
+    "@wdio/mocha-framework",
+    "@wdio/selenium-standalone-service",
+    "@wdio/spec-reporter",
+    "@wdio/sync"
+  ],
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
